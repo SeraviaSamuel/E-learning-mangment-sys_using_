@@ -1,0 +1,12 @@
+.card {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 400px; /* Set the same height as the card */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+  }
+  

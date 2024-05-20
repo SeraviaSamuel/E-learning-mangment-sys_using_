@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-left: 1px solid #dee2e6;
+}
+
+  

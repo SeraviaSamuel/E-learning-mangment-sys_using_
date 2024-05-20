@@ -1,0 +1,57 @@
+<div class="wrapper" [ngStyle]="{'background-image': 'url(\'/assets/images/Register/bg-registration-form-2.jpg\')'}">
+  <div class="inner">
+      <form  #loginForm="ngForm"  (ngSubmit)="onSubmit(loginForm)">
+          <h3>Login Form</h3>
+          
+          <div class="form-wrapper">
+            <label for="firstName"> Name</label>
+                  <input type="text" class="form-control" id="firstName" name="userName" [(ngModel)]="userData.userName"  required
+                  minlength="3" 
+                  #userName="ngModel"
+                  >
+
+                  @if(userName.invalid && userName.touched){
+                    <div id="titleHelp" class="form-text text-danger">
+                      @if(userName.errors?.['required']){
+                      <span>This field is required</span>
+                      } @if(userName.errors?.['minlength']){
+                      <span>Min length is 3</span>
+                      }
+                    </div>
+                  }
+                    
+          </div>
+
+
+          
+          <div class="form-wrapper">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="userData.password"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+              #password="ngModel"
+              >
+              @if(password.invalid && password.touched){
+                <div id="titleHelp" class="form-text text-danger">
+                  @if(password.errors?.['required']){
+                  <span>This field is required</span>
+                  } @if(password.errors?.['pattern']){
+                  <span>Password must contain at least one digit, one lowercase letter, one uppercase letter, one special character, and be at least 8 characters long</span>
+                  }
+                </div>
+              }
+
+
+          </div>
+          <div id="titleHelp" class="form-text text-danger">
+          @if( errorMessage){
+            <span>Invalid username or password</span>
+          }
+          </div>
+         
+         
+          <button type="submit" [disabled]="loginForm.invalid" >Login</button>
+      </form>
+      <div class="background-image"></div>
+  </div>
+</div>

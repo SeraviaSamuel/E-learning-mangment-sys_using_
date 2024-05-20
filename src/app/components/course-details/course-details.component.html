@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-fluid rounded" src="assets/images/Courses/{{ courseDetails.imgPath }}" alt="Course Image" style="width: 60%;">
+        </div>
+        <div class="col-md-6">
+            <h2>{{ courseDetails.name }}</h2>
+            <p><strong>Duration:</strong> {{ courseDetails.durationInHours }} hours</p>
+            <p><strong>Instructor:</strong> {{ instructorName }}</p>
+           
+            <a class="btn btn-primary"[routerLink]="'/course-enrollement/'+courseId" routerLinkActive="active">Enroll Now</a>
+
+            
+        </div>
+    </div>
+</div>
